@@ -1,3 +1,4 @@
+import FirebaseCrud from "./crud";
 import { Add, OrderList } from "./function";
 import { Parameter } from "./ParameterComponent";
 import { Tables } from "./Tablecss";
@@ -10,8 +11,9 @@ import { Count } from "./usestatecount";
 function App() {
   return (
     <>
-    <Effect/>
-    <Ternary/>
+    <FirebaseCrud/>
+    {/* <Effect/>
+    <Ternary/> */}
     {/* <UsestateHooks/>
     <Count/> */}
     {/* <OrderList/>
