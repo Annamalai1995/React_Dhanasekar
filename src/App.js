@@ -1,3 +1,4 @@
+import Office from "./crud";
 import FirebaseCrud from "./crud";
 import { Add, OrderList } from "./function";
 import { Parameter } from "./ParameterComponent";
@@ -11,9 +12,9 @@ import { Count } from "./usestatecount";
 function App() {
   return (
     <>
-    <FirebaseCrud/>
-    {/* <Effect/>
-    <Ternary/> */}
+   
+    {/* /* <Effect/> */}
+    {/* <Ternary/> */}
     {/* <UsestateHooks/>
     <Count/> */}
     {/* <OrderList/>
@@ -22,6 +23,7 @@ function App() {
      {/* <Tables/>
       */}
            {/* <Parameter where="./Panda.jpg"length="400px"breadth="400px"/> */}
+           <Office/>
 
 
     </>

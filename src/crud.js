@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -9,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 
-export default function OfficeCrud() {
+export default function Office() {
   const [employees, setEmployees] = useState([]);
   const [form, setForm] = useState({
     name: "",
@@ -20,7 +21,7 @@ export default function OfficeCrud() {
 
   const employeesCollection = collection(db, "officeDetails");
 
-  // 🔹 Real-time listener
+  
   useEffect(() => {
     const unsubscribe = onSnapshot(employeesCollection, (snapshot) => {
       setEmployees(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
@@ -29,7 +30,6 @@ export default function OfficeCrud() {
     return () => unsubscribe();
   }, []);
 
-  // Handle input change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -65,7 +65,6 @@ export default function OfficeCrud() {
     <div align="center">
       <h2> TCS </h2>
 
-      {/* Form */}
       <div style={{ marginBottom: "20px" }}>
         <input
           type="text"
@@ -100,7 +99,7 @@ export default function OfficeCrud() {
         </button>
       </div>
 
-      {/* Table */}
+      
       <table border="1" style={{ marginTop: "20px", width: "80%" }}>
         <thead>
           <tr>
