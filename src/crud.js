@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -23,11 +22,11 @@ export default function Office() {
 
   
   useEffect(() => {
-    const unsubscribe = onSnapshot(employeesCollection, (snapshot) => {
+    const instant = onSnapshot(employeesCollection, (snapshot) => {
       setEmployees(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     });
 
-    return () => unsubscribe();
+    return () => instant();
   }, []);
 
   const handleChange = (e) => {
